@@ -1,0 +1,396 @@
+/* Fix user-agent and set max-height of whole site */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, 
+#overlayNew, #backgroundNew, #popupNew, #overlayEnd, #backgroundEnd, #popupEnd,
+.pages, .page, .col-12, .col-md-9 {
+	  max-height: 100vh;
+}
+
+/* General settings */
+
+html {
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, input {
+  font-family:
+    "HelveticaNeue-Light",
+    "Helvetica Neue Light",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    "Lucida Grande",
+    sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  word-wrap: break-word;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.row {
+	margin: 0;
+}
+
+/* Pages */
+
+.pages {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.page {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+/* Login Page */
+
+.login.page {
+  background-color: #000;
+}
+
+.login.page .form {
+  height: 100px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+
+.login.page .form .usernameInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+  font-size: 200%;
+  letter-spacing: 3px;
+}
+
+.login.page .title {
+  font-size: 200%;
+}
+
+.login.page .title, .login.page .usernameInput {
+  color: #fff;
+  font-weight: 100;
+}
+
+/* Wait Page */
+.wait.page {
+	display: none;
+}
+
+.wait.page {
+  background-color: #000;
+}
+
+.wait.page .form {
+  height: 100px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+
+.wait.page .title {
+  font-size: 200%;
+  color: #fff;
+  font-weight: 100;
+}
+
+/* End Page */
+.end.page {
+	display: none;
+}
+
+.end.page {
+	background-color: #000;
+}
+
+.end.page .form {
+	height: 600px;
+	position: absolute;
+	text-align: center;
+	top: 10%;
+	width: 100%;
+}
+
+.end.page .title {
+	font-size: 200%;
+	color: #FFF;
+	font-weight: 300;
+}
+
+.end.page .rank {
+	font-size: 175%;
+	color: #FFF;
+	font-weight: 100;
+}
+
+/* Game Page */
+.game.page {
+	display: none;
+}
+#overlayNew,
+#overlayEnd {
+	display: none;
+}
+#backgroundNew,
+#backgroundEnd {
+	opacity:0.5;
+    filter: alpha(opacity=50);
+    background-color:#000; 
+    width:100%; 
+    height:100%; 
+    top:0; 
+    left:0; 
+    position:fixed;
+}
+#backgroundNew {
+	z-index: 20;
+}
+#backgroundEnd {
+	z-index: 10;
+}
+#popupNew,
+#popupEnd {
+	position: fixed; 
+    left: 50%; top: 50%;
+    width: 600px; height: 200px;
+    margin-left: -300px; margin-top: -150px;
+    background: #DDDDDD; 
+	color: #222;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+    padding: 10px;
+	padding-top: 20px;
+	font-size: 2rem;
+	text-align: center;
+}
+#popupNew {
+	z-index: 21;
+}
+#popupEnd {
+	z-index: 11;
+}
+
+/* Header */
+#header {
+	display: table;
+	width: 100%;
+	font-size: 2rem;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #0A79C7;
+}
+#header span {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+#header span.time {
+	float: right;
+}
+
+/* Drawing Area */
+#drawing-wrapper-wrapper {
+	background-color: #000000;
+}
+#drawing-wrapper {
+	width: 100%;
+	max-height: 100%;
+	display: inline-block;
+	position: relative;
+}
+#drawing-wrapper:after {
+	padding-top: 56.25%;
+	/* 16:9 ratio */
+	display: block;
+	content: '';
+}
+#drawing-area {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: #FFFFFF;
+}
+#drawing-canvas {
+	width: 100%;
+	height: 100%;
+}
+
+/* Users */
+#users {
+	background-color: #529DD2;
+}
+.user {
+	display: table;
+	width: 100%;
+	height: 100%;
+	border-right: 3px solid #2C89CA;
+}
+.user.me {
+	background-color: #aaa;
+}
+.user.active {
+	background-color: #2C89CA;
+}
+.user span {
+	display: table-cell;
+	vertical-align: middle;
+	align-items: center;
+	font-size: 1.5rem;
+}
+.user span strong {
+	font-size: 1.4rem;
+}
+.user span i {
+	margin-right: 10px;
+}
+#users .col-3:nth-last-child(1) .user {
+  	border-right: none;
+}
+
+/* Settings */
+#settings {
+	background-color: #065A96;
+	display: table;
+	width: 100%;
+	font-size: 1.5rem;
+}
+#settings span {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+#settings span i {
+	margin-right: 10px;
+}
+
+/* Chat */
+#chat {
+	background-color: #e6e6e6;
+	padding: 0 10px;
+}
+#chat .message {
+	margin-bottom: 20px;
+}
+#chat .message .system {
+	color: #333333;
+	font-size: 1rem;
+	text-align: center;
+}
+#chat .message .username {
+	color: #333333;
+	font-size: 1rem;
+}
+#chat .message .text {
+	color: #191919;
+	font-size: 1.2rem;
+}
+
+/* Input */
+#input {
+	background-color: #044675;
+	display: table;
+	width: 100%;
+}
+#input span {
+	display: table-cell;
+	vertical-align: middle;
+	align-items: center;
+}
+#input span input[type="text"] {
+	background-color: transparent;
+	padding: 10px;
+	border: none;
+	border-bottom: solid 2px #c9c9c9;
+	transition: border 0.3s;
+	width: 80%;
+	font-size: 1.5rem;
+	color: #FFFFFF;
+}
+#input span input[type="text"]:focus,
+#input span input[type="text"].focus {
+ 	border-bottom: solid 2px #969696;
+  	outline: none;
+}
+#input span input[type="text"]:focus ~ i,
+#input span input[type="text"].focus ~ i {
+  	border-bottom: solid 2px #969696;
+}
+#input span i {
+	font-size: 1.5rem;
+	border-bottom: solid 2px #c9c9c9;
+	padding-bottom: 17px;
+}
+
+/* Sizings */
+#header,
+#settings {
+	height: 10%;
+	min-height: 10%;
+}
+#drawing-wrapper-wrapper,
+#chat {
+	height: 75%;
+	min-height: 75%;
+}
+#users,
+#input {
+	height: 14.99%;
+	min-height: 14.99%;
+}
+
+@media (max-width: 767px) {
+	#header {
+		height: 10%;
+		min-height: 10%;
+	}
+	#settings {
+		display: none;
+	}
+	#drawing-wrapper-wrapper {
+		height: 35%;
+		min-height: 35%;
+	}
+	#chat {
+		height: 35%;
+		min-height: 35%;
+	}
+	#users {
+		display: none;
+	}
+	#input {
+		height: 20%;
+		min-height: 20%;
+	}
+}

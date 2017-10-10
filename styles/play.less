@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+@font-1: 'Roboto', sans-serif;
+
+@color-1: #529DD2;
+@color-2: #2C89CA;
+@color-3: #0A79C7;
+@color-4: #065A96;
+@color-5: #044675;
+@color-white: #FFFFFF;
+
+body {
+    margin: 0;
+    font-family: @font-1;
+    color: @color-white;
+    font-weight: 300;
+}
+
+.wrapper,
+.wrapper .desktop,
+.wrapper .desktop .row,
+.wrapper .tablet,
+.wrapper .tablet .row,
+.wrapper .phone,
+.wrapper .phone .row {
+    max-height: 100vh;
+}
+
+.row {
+    margin: 0;
+}
+.no-padding {
+    padding: 0;
+}
+
+.drawing-area-wrapper {
+    width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    position: relative;
+
+    &:after {
+        padding-top: 56.25%;
+        /* 16:9 ratio */
+        display: block;
+        content: '';
+    }
+
+    .drawing-area {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        /* fill parent */
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.setting-panel {
+    background-color: @color-4;
+}
+
+.header {
+    background-color: @color-3;
+}
+
+.chat-panel {
+    background-color: darken(@color-white, 10%);
+}
+
+.drawing-area-wrapper-wrapper {
+    background-color: #000;
+}
+
+.drawing-area {
+    background-color: @color-white;
+}
+
+.input-panel {
+    background-color: @color-5;
+}
+
+.user-panel {
+    background-color: @color-1;
+}
+
+
+.header {
+    display: table;
+    width: 100%;
+    font-size: 2rem;
+
+    span {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+}
+
+.setting-panel {
+    display: table;
+    width: 100%;
+    font-size: 1.5rem;
+
+    span {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+
+        i {
+            margin-right: 10px;
+        }
+    }
+}
+
+.input-panel {
+    display: table;
+    width: 100%;
+
+    span {
+        display: table-cell;
+        vertical-align: middle;
+        align-items: center;
+
+        input[type="text"] {
+            background-color: transparent;
+            padding: 10px;
+            border: none;
+            border-bottom: solid 2px #c9c9c9;
+            transition: border 0.3s;
+            width: 80%;
+            font-size: 1.5rem;
+            color: @color-white;
+        }
+        input[type="text"]:focus,
+        input[type="text"].focus {
+            border-bottom: solid 2px #969696;
+            outline: none;
+
+            ~ i {
+                border-bottom: solid 2px #969696;
+            }
+        }
+        i {
+            font-size: 1.5rem;
+            border-bottom: solid 2px #c9c9c9;
+            padding-bottom: 17px;
+        }
+    }
+}
+
+.user-panel {
+
+    .col-3 {
+
+        &:nth-last-child(1) {
+            .user {
+                border-right: none;
+            }
+        }
+
+        .user {
+            display: table;
+            width: 100%;
+            height: 100%;
+            border-right: 3px solid @color-2;
+
+            &.active {
+                background-color: @color-2;
+            }
+
+            span {
+                display: table-cell;
+                vertical-align: middle;
+                align-items: center;
+                font-size: 1.5rem;
+
+                strong {
+                    font-size: 1.4rem;
+                }
+
+                i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+.chat-panel {
+    padding: 0 10px;
+
+    .message {
+        margin-bottom: 20px;
+
+        .username {
+            color: darken(@color-white, 80%);
+            font-size: 1rem;
+        }
+
+        .text {
+            color: darken(@color-white, 90%);
+            font-size: 1.2rem;
+        }
+
+    }
+}
+
+
+.desktop {
+
+    @media (max-width: 1139px) {
+        display: none;
+    }
+
+    .setting-panel, .header {
+        height: 10%;
+    }
+
+    .chat-panel, .drawing-area-wrapper-wrapper {
+        height: 75%;
+    }
+
+    .input-panel, .user-panel {
+        height: 14.99%;
+    }
+
+}
+
+.tablet {
+
+    @media (max-width: 719px){
+        display: none;
+    }
+    @media (min-width: 1140px){
+        display: none;
+    }
+
+    .setting-panel, .header {
+        height: 10%;
+    }
+
+    .chat-panel {
+        height: 90%;
+    }
+    
+    .drawing-area-wrapper-wrapper {
+        height: 60%;
+    }
+
+    .input-panel {
+        height: 15%;
+    }
+    
+    .user-panel {
+        height: 14.99%;
+    }
+
+}
+
+.phone {
+
+    @media (max-width: 719px) {
+        display: block;
+    }
+    @media (min-width: 720px) {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .header {
+        height: 10%;
+    }
+
+    .drawing-area-wrapper-wrapper {
+        height: 45%;
+    }
+
+    .chat-panel {
+        height: 30%;
+    }
+
+    .input-panel {
+        height: 14.99%;
+    }
+
+}

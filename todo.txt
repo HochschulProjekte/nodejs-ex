@@ -1,0 +1,9 @@
+//- Result Seite
+//- Punktespeicherung und Berechnung/Gewinnerlosung
+- zufälliges Ziehen von Wörtern aus DB
+- Speichern von Daten in DB
+- Speichern von User-Daten (Fehlversuche, Richtige, Striche, getippte Zeichen ...)
+- PDF-Download der eigene User-Daten
+- Speichern der Bilder für PDF-Download
+- mobile Anpassung
+- Spiel verlassen funktion
